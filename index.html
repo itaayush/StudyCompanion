@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyCompanion | AI-Powered Document Learning</title>
+    <!-- Modern font import -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <div class="header-badge">✨ AI-Powered Learning</div>
+        <h1>StudyCompanion</h1>
+        <p>Transform your PDFs into an intelligent AI tutor. Upload, ask, and learn.</p>
+      </header>
+
+      <div class="grid-container">
+        <!-- Indexing Card -->
+        <section class="card full-width">
+          <div class="card-icon">📄</div>
+          <h2>Upload & Index</h2>
+          <p>
+            Upload any PDF and let our AI instantly index it. Your document becomes searchable knowledge in seconds.
+          </p>
+          <input type="file" id="pdfFile" accept="application/pdf" />
+          <button onclick="handleUpload()" id="uploadBtn">
+            📤 Upload PDF
+          </button>
+          <div id="uploadStatus" class="status-msg"></div>
+        </section>
+
+        <!-- Tutor Card -->
+        <section class="card full-width">
+          <div class="card-icon">🤖</div>
+          <h2>Ask Questions</h2>
+          <p>
+            Get instant, accurate answers from your documents. AI-powered responses with exact page citations.
+          </p>
+          <input
+            type="text"
+            id="chatQuery"
+            placeholder="Ask anything about your document..."
+          />
+          <button onclick="handleChat()" id="chatBtn">🔍 Ask AI</button>
+          <div id="chatStatus" class="status-msg"></div>
+          <div id="chat-results"></div>
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
