@@ -24,6 +24,7 @@ def get_vector_db() -> Chroma:
             "No document indexed yet. "
             "Please upload a PDF first via the /upload-pdf endpoint."
         )
+        
     try:
         return Chroma(
             collection_name=collection,

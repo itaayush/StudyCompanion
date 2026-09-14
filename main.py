@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from indexingpipe import index_document
 from retrivepipeline import ask_tutor
 
-app = FastAPI(title="DocuTutor API", version="1.0.0")
+app = FastAPI(title="StudyCompanion API", version="1.0.0")
 
 # Configure CORS so the HTML frontend can reach this backend
 app.add_middleware(
@@ -22,10 +22,7 @@ app.add_middleware(
 
 @app.post("/upload-pdf")
 async def upload_and_index(file: UploadFile = File(...)):
-    """
-    Receives a PDF file, saves it temporarily, indexes it into the
-    Qdrant vector database, then removes the temp file.
-    """
+    
     if not file.filename.lower().endswith(".pdf"):
         return {"status": "error", "message": "Only PDF files are accepted."}
 

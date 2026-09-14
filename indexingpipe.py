@@ -30,10 +30,6 @@ def set_active_collection(name: str):
 
 
 def make_collection_name(filename: str) -> str:
-    """
-    Converts a PDF filename into a safe Qdrant collection name.
-    e.g. 'Node.js Guide (2024).pdf' -> 'nodejs_guide_2024'
-    """
     stem = Path(filename).stem                     
     slug = re.sub(r"[^a-zA-Z0-9]+", "_", stem)    
     slug = slug.strip("_").lower()[:60]            
